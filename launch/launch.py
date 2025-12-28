@@ -1,0 +1,27 @@
+import os
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.actions import SetEnvironmentVariable, IncludeLaunchDescription
+from launch.conditions import IfCondition
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch_ros.substitutions import FindPackageShare
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+    launch_path = PathJoinSubstitution([pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py'])
+    pkg_navbot = get_package_share_directory('navbot')
+    world_path = PathJoinSubstitution([pkg_navbot, 'worlds', 'world.sdf'])
+
+
+    gz_sim = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(launch_path),
+            launch_arguments={'gz_args': [world_path]}.items(),
+    )
+
+    return LaunchDescription([
+        gz_sim
+    ])

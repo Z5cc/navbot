@@ -1,1 +1,3 @@
 # navbot
+
+## installation
