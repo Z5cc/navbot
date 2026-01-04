@@ -17,7 +17,8 @@ target_include_directories(my_node PUBLIC
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
 target_compile_features(my_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-install(TARGETS my_node
+install(
+  TARGETS my_node
   DESTINATION lib/${PROJECT_NAME})
 
 install(
@@ -26,7 +27,7 @@ install(
 )
 
 install(
-  DIRECTORY worlds
+  DIRECTORY maps
   DESTINATION share/${PROJECT_NAME}
 )
 
