@@ -1,7 +1,22 @@
 <?xml version="1.0" ?>
 <sdf version="1.8">
-    <world name="world_demo">
-    ...
-    ...
+    <world name="default">
+
+        <light type="point" name="sun">
+            <pose>0 0 10 0 0 0</pose>
+        </light>
+
+        <include>
+            <uri>
+            model://urban_room_2way/model.sdf
+            </uri>
+        </include>
+
+        <include>
+            <uri>
+            model://x1/model.sdf
+            </uri>
+        </include>
+
     </world>
 </sdf>
