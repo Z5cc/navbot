@@ -21,18 +21,11 @@ install(
   TARGETS my_node
   DESTINATION lib/${PROJECT_NAME})
 
-install(
-  DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}
-)
-
-install(
-  DIRECTORY maps
-  DESTINATION share/${PROJECT_NAME}
-)
-
-install(
-  DIRECTORY worlds
+install(DIRECTORY
+  launch
+  maps
+  worlds
+  config
   DESTINATION share/${PROJECT_NAME}
 )
 

@@ -1,11 +1,17 @@
 <?xml version="1.0"?>
-<sdf version="1.6">
+<sdf version="1.8">
     <model name="X1">
         <enable_wind>1</enable_wind>
         <static>0</static>
+
+
+
+
+
+        <!-- BASE -->
         <link name="base_link">
             <inertial>
-                <pose frame="">0.0 0.0 0.062 0 0 0</pose>
+                <pose>0.0 0.0 0.062 0 0 0</pose>
                 <mass>46.034</mass>
                 <inertia>
                     <ixx>0.613201</ixx>
@@ -17,7 +23,7 @@
                 </inertia>
             </inertial>
             <collision name="base_link_collision">
-                <pose frame="">0 0 0.12 0 0 0</pose>
+                <pose>0 0 0.12 0 0 0</pose>
                 <geometry>
                     <box>
                         <size>0.9874 0.5709 0.05</size>
@@ -25,7 +31,7 @@
                 </geometry>
             </collision>
             <collision name="base_link_collision_bottom">
-                <pose frame="">0 0 0.046 0 0 0</pose>
+                <pose>0 0 0.046 0 0 0</pose>
                 <geometry>
                     <box>
                         <size>0.80 0.5709 0.095</size>
@@ -33,7 +39,7 @@
                 </geometry>
             </collision>
             <collision name="base_link_collision_1">
-                <pose frame="">0 0 0.185625 0 0 0</pose>
+                <pose>0 0 0.185625 0 0 0</pose>
                 <geometry>
                     <box>
                         <size>0.78992 0.5709 0.12375</size>
@@ -41,7 +47,7 @@
                 </geometry>
             </collision>
             <collision name="top_plate_collision">
-                <pose frame="">0.0812 0 0.245 0 0 0</pose>
+                <pose>0.0812 0 0.245 0 0 0</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/top_plate.dae</uri>
@@ -49,7 +55,7 @@
                 </geometry>
             </collision>
             <collision name="top_plate_collision_2">
-                <pose frame="">0.0812 0 0.245 0 0 0</pose>
+                <pose>0.0812 0 0.245 0 0 0</pose>
                 <geometry>
                     <box>
                         <size>0.32 0.41 0.09</size>
@@ -57,7 +63,7 @@
                 </geometry>
             </collision>
             <visual name="base_link_visual">
-                <pose frame="">0 0 0 0 0 -3.14159</pose>
+                <pose>0 0 0 0 0 -3.14159</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/chassis.dae</uri>
@@ -65,7 +71,7 @@
                 </geometry>
             </visual>
             <visual name="center_left_headlight_visual">
-                <pose frame="">0.485766 0.0844 0.124431 0 0 -3.14159</pose>
+                <pose>0.485766 0.0844 0.124431 0 0 -3.14159</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/headlight.dae</uri>
@@ -73,7 +79,7 @@
                 </geometry>
             </visual>
             <visual name="center_right_headlight_visual">
-                <pose frame="">0.485766 -0.0844 0.124431 0 0 -3.14159</pose>
+                <pose>0.485766 -0.0844 0.124431 0 0 -3.14159</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/headlight.dae</uri>
@@ -81,7 +87,7 @@
                 </geometry>
             </visual>
             <visual name="left_headlight_visual">
-                <pose frame="">0.461459 0.216803 0.124431 0 0 -3.14159</pose>
+                <pose>0.461459 0.216803 0.124431 0 0 -3.14159</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/headlight.dae</uri>
@@ -89,7 +95,7 @@
                 </geometry>
             </visual>
             <visual name="marker_visual_1">
-                <pose frame="">0.066047 0.212211 0.209188 -3.14159 1.57079 -1.60259</pose>
+                <pose>0.066047 0.212211 0.209188 -3.14159 1.57079 -1.60259</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/led.dae</uri>
@@ -97,7 +103,7 @@
                 </geometry>
             </visual>
             <visual name="marker_visual_2">
-                <pose frame="">-0.066047 0.212211 0.209188 -3.14159 1.57079 -1.60259</pose>
+                <pose>-0.066047 0.212211 0.209188 -3.14159 1.57079 -1.60259</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/led.dae</uri>
@@ -105,7 +111,7 @@
                 </geometry>
             </visual>
             <visual name="marker_visual_3">
-                <pose frame="">-0.42493 0 0.209188 3.14159 1.57079 7e-06</pose>
+                <pose>-0.42493 0 0.209188 3.14159 1.57079 7e-06</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/led.dae</uri>
@@ -113,7 +119,7 @@
                 </geometry>
             </visual>
             <visual name="marker_visual_4">
-                <pose frame="">-0.42493 0.13619 0.209188 3.14159 1.57079 7e-06</pose>
+                <pose>-0.42493 0.13619 0.209188 3.14159 1.57079 7e-06</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/led.dae</uri>
@@ -121,7 +127,7 @@
                 </geometry>
             </visual>
             <visual name="marker_visual_5">
-                <pose frame="">-0.42493 -0.13619 0.209188 3.14159 1.57079 7e-06</pose>
+                <pose>-0.42493 -0.13619 0.209188 3.14159 1.57079 7e-06</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/led.dae</uri>
@@ -129,7 +135,7 @@
                 </geometry>
             </visual>
             <visual name="right_headlight_visual">
-                <pose frame="">0.461459 -0.216803 0.124431 0 0 -3.14159</pose>
+                <pose>0.461459 -0.216803 0.124431 0 0 -3.14159</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/headlight.dae</uri>
@@ -137,7 +143,7 @@
                 </geometry>
             </visual>
             <visual name="marker_visual_6">
-                <pose frame="">0.066047 -0.212211 0.209188 3.14159 1.57079 1.60259</pose>
+                <pose>0.066047 -0.212211 0.209188 3.14159 1.57079 1.60259</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/led.dae</uri>
@@ -145,7 +151,7 @@
                 </geometry>
             </visual>
             <visual name="marker_visual_7">
-                <pose frame="">-0.066047 -0.212211 0.209188 3.14159 1.57079 1.60259</pose>
+                <pose>-0.066047 -0.212211 0.209188 3.14159 1.57079 1.60259</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/led.dae</uri>
@@ -153,7 +159,7 @@
                 </geometry>
             </visual>
             <visual name="top_plate_visual">
-                <pose frame="">0.0812 0 0.245 0 0 0</pose>
+                <pose>0.0812 0 0.245 0 0 0</pose>
                 <geometry>
                     <mesh>
                         <uri>meshes/top_plate.dae</uri>
@@ -161,7 +167,7 @@
                 </geometry>
             </visual>
             <light name="left_light_source" type="spot">
-                <pose frame="">0.514147 0.216803 0.180 3.14159 1.56859 0</pose>
+                <pose>0.514147 0.216803 0.180 3.14159 1.56859 0</pose>
                 <attenuation>
                     <range>50</range>
                     <linear>0</linear>
@@ -179,7 +185,7 @@
                 <cast_shadows>1</cast_shadows>
             </light>
             <light name="center_left_light" type="spot">
-                <pose frame="">0.538 0.0844 0.180 3.14159 1.56859 0</pose>
+                <pose>0.538 0.0844 0.180 3.14159 1.56859 0</pose>
                 <attenuation>
                     <range>50</range>
                     <linear>0</linear>
@@ -197,7 +203,7 @@
                 <cast_shadows>1</cast_shadows>
             </light>
             <light name="center_right_light" type="spot">
-                <pose frame="">0.538 -0.0844 0.180 3.14159 1.56859 0</pose>
+                <pose>0.538 -0.0844 0.180 3.14159 1.56859 0</pose>
                 <attenuation>
                     <range>50</range>
                     <linear>0</linear>
@@ -215,7 +221,7 @@
                 <cast_shadows>1</cast_shadows>
             </light>
             <light name="right_light_source" type="spot">
-                <pose frame="">0.514147 -0.216803 0.180 3.14159 1.56859 0</pose>
+                <pose>0.514147 -0.216803 0.180 3.14159 1.56859 0</pose>
                 <attenuation>
                     <range>50</range>
                     <linear>0</linear>
@@ -232,6 +238,9 @@
                 <direction>0 0 -1</direction>
                 <cast_shadows>1</cast_shadows>
             </light>
+
+
+
             <sensor name="imu_sensor" type="imu">
                 <always_on>1</always_on>
                 <update_rate>50</update_rate>
@@ -308,8 +317,10 @@
                         </z>
                     </linear_acceleration>
                 </imu>
-
             </sensor>
+
+
+
             <visual name="camera_visual">
                 <pose>0.43 0 0.26 0 0 0</pose>
                 <geometry>
@@ -362,8 +373,12 @@
                     </noise>
                 </camera>
             </sensor>
+
+
+            
             <sensor name="front_laser" type="gpu_ray">
                 <pose>0.43 0 0.26 0 0 0</pose>
+                <topic>lidar</topic>
                 <update_rate>20</update_rate>
                 <lidar>
                     <scan>
@@ -387,8 +402,21 @@
                 </lidar>
             </sensor>
         </link>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- WEELS -->
         <link name="front_left_wheel">
-            <pose frame="">0.256 0.2854 0.03282 0 0 0</pose>
+            <pose>0.256 0.2854 0.03282 0 0 0</pose>
             <inertial>
                 <mass>2.637</mass>
                 <inertia>
@@ -401,7 +429,7 @@
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose frame="">0 0 0 -1.5707963267948966 0 0</pose>
+                <pose>0 0 0 -1.5707963267948966 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.1143</length>
@@ -440,7 +468,7 @@
             </axis>
         </joint>
         <link name="front_right_wheel">
-            <pose frame="">0.256 -0.2854 0.03282 0 0 0</pose>
+            <pose>0.256 -0.2854 0.03282 0 0 0</pose>
             <inertial>
                 <mass>2.637</mass>
                 <inertia>
@@ -453,7 +481,7 @@
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose frame="">0 0 0 -1.5707963267948966 0 0</pose>
+                <pose>0 0 0 -1.5707963267948966 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.1143</length>
@@ -492,7 +520,7 @@
             </axis>
         </joint>
         <link name="rear_left_wheel">
-            <pose frame="">-0.256 0.2854 0.03282 0 0 0</pose>
+            <pose>-0.256 0.2854 0.03282 0 0 0</pose>
             <inertial>
                 <mass>2.637</mass>
                 <inertia>
@@ -505,7 +533,7 @@
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose frame="">0 0 0 -1.5707963267948966 0 0</pose>
+                <pose>0 0 0 -1.5707963267948966 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.1143</length>
@@ -544,7 +572,7 @@
             </axis>
         </joint>
         <link name="rear_right_wheel">
-            <pose frame="">-0.256 -0.2854 0.03282 0 0 0</pose>
+            <pose>-0.256 -0.2854 0.03282 0 0 0</pose>
             <inertial>
                 <mass>2.637</mass>
                 <inertia>
@@ -557,7 +585,7 @@
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose frame="">0 0 0 -1.5707963267948966 0 0</pose>
+                <pose>0 0 0 -1.5707963267948966 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.1143</length>
@@ -595,5 +623,8 @@
                 </limit>
             </axis>
         </joint>
+
+
+
     </model>
 </sdf>
