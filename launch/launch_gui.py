@@ -8,6 +8,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node, LifecycleNode
+from ros_gz_bridge.actions import RosGzBridge
 
 
 def generate_launch_description():
@@ -15,19 +16,22 @@ def generate_launch_description():
     world_file_path = PathJoinSubstitution([pkg_navbot, 'worlds', 'world.world'])
     assets_folder = PathJoinSubstitution([pkg_navbot, 'worlds', 'assets'])
     plugin_folder = PathJoinSubstitution([pkg_navbot, 'plugins'])
-    rviz_file_path = PathJoinSubstitution([pkg_navbot, 'rviz', 'rviz.rviz'])
+    rviz_config_path = PathJoinSubstitution([pkg_navbot, 'config', 'rviz.rviz'])
+    ros_gz_bridge_config_path = PathJoinSubstitution([pkg_navbot, 'config', 'ros_gz_bridge.yaml'])
     # map_file_path = os.path.join(pkg_navbot,'maps','willow.yaml')
 
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     launch_file_path = PathJoinSubstitution([pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py'])
 
     gz_resource_var = SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', assets_folder)
-
     gz_plugin_var = SetEnvironmentVariable('GZ_SIM_PLUGIN_PATH', plugin_folder)
-
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(launch_file_path),
         launch_arguments={'gz_args': [world_file_path]}.items(),
+    )
+    ros_gz_bridge = RosGzBridge(
+        bridge_name='bridge_node',
+        config_file=ros_gz_bridge_config_path,
     )
 
     rviz = Node(
@@ -35,12 +39,25 @@ def generate_launch_description():
             namespace='rviz2',
             executable='rviz2',
             name='rviz2',
-            arguments=['-d', rviz_file_path]
+            arguments=['-d', rviz_config_path]
     )
+
+
+
+
+
+
+
+
+
+
+
+
 
     return LaunchDescription([
         gz_resource_var,
         gz_plugin_var,
         gz_sim,
+        ros_gz_bridge,
         rviz,
     ])
