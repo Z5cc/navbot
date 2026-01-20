@@ -13,9 +13,9 @@ from launch_ros.actions import Node, LifecycleNode
 def generate_launch_description():
 
     talker = Node(
-            package='demo_nodes_cpp',
-            executable='talker',
-            name='talker'
+        package='demo_nodes_cpp',
+        executable='talker',
+        name='talker'
     )
 
     listener = Node(

@@ -16,6 +16,7 @@
             <render_engine>ogre2</render_engine>
         </plugin>
 
+
         <light type="directional" name="sun">
             <pose>0 0 10 0 0 0</pose>
         </light>
@@ -30,6 +31,7 @@
             <uri>
             model://x1/model.sdf
             </uri>
+            <pose>0 0 0.3 0 0 0</pose>
         </include>
         
     </world>
