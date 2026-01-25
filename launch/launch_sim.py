@@ -34,14 +34,6 @@ def generate_launch_description():
         config_file=ros_gz_bridge_config_path,
     )
 
-    keyboard_control = Node(
-        package='teleop_twist_keyboard',
-        executable='teleop_twist_keyboard',
-        name='teleop_twist_keyboard',
-        prefix='xterm -e',
-        output='screen'
-    )
-
     rviz = Node(
         package='rviz2',
         namespace='rviz2',
@@ -56,6 +48,5 @@ def generate_launch_description():
         gz_plugin_var,
         gz_sim,
         ros_gz_bridge,
-        keyboard_control,
         rviz,
     ])
