@@ -43,7 +43,7 @@ def generate_launch_description():
     # )
 
     return LaunchDescription([
-        listener,
-        talker
+        # listener,
+        # talker
         # map_server,
     ])

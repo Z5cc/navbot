@@ -7,7 +7,7 @@ from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
-from launch_ros.actions import Node, LifecycleNode
+from launch_ros.actions import Node, LifecycleNode, SetParameter
 from ros_gz_bridge.actions import RosGzBridge
 
 
@@ -25,9 +25,12 @@ def generate_launch_description():
 
     gz_resource_var = SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', assets_folder)
     gz_plugin_var = SetEnvironmentVariable('GZ_SIM_PLUGIN_PATH', plugin_folder)
+    
+    use_sim_time = SetParameter(name='use_sim_time', value=True)
+
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(launch_file_path),
-        launch_arguments={'gz_args': [world_file_path]}.items(),
+        launch_arguments={'gz_args': ['-r ', world_file_path]}.items(),
     )
     ros_gz_bridge = RosGzBridge(
         bridge_name='bridge_node',
@@ -44,6 +47,7 @@ def generate_launch_description():
 
 
     return LaunchDescription([
+        use_sim_time,
         gz_resource_var,
         gz_plugin_var,
         gz_sim,

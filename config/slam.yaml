@@ -10,9 +10,9 @@ slam:
     ceres_loss_function: None
 
     # ROS Parameters
-    odom_frame: odom
+    odom_frame: X1/odom
     map_frame: map
-    base_frame: base_link
+    base_frame: X1/base_link
     scan_topic: /scan
     # mode: mapping # It will be set in launch file
     debug_logging: false
