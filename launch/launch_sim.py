@@ -19,14 +19,13 @@ def generate_launch_description():
     rviz_config_path = PathJoinSubstitution([pkg_navbot, 'config', 'rviz.rviz'])
     ros_gz_bridge_config_path = PathJoinSubstitution([pkg_navbot, 'config', 'ros_gz_bridge.yaml'])
     # map_file_path = os.path.join(pkg_navbot,'maps','willow.yaml')
-
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     launch_file_path = PathJoinSubstitution([pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py'])
 
     gz_resource_var = SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', assets_folder)
     gz_plugin_var = SetEnvironmentVariable('GZ_SIM_PLUGIN_PATH', plugin_folder)
-    
     use_sim_time = SetParameter(name='use_sim_time', value=True)
+
 
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(launch_file_path),
