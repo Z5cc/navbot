@@ -34,16 +34,16 @@ def generate_launch_description():
     #     parameters=[{'yaml_filename': map_file_path}]
     # )
 
-    # start_lifecycle_manager = Node(
-    #     package='nav2_lifecycle_manager',
-    #     executable='lifecycle_manager',
-    #     name='lifecycle_manager',
-    #     output='screen',
-    #     emulate_tty=True,
-    #     parameters=[{'use_sim_time': True},r
-    #                 {'autostart': True},
-    #                 {'node_names': ['map_server']}]
-    # )
+    start_lifecycle_manager = Node(
+        package='nav2_lifecycle_manager',
+        executable='lifecycle_manager',
+        name='lifecycle_manager',
+        output='screen',
+        emulate_tty=True,
+        parameters=[{'use_sim_time': True},
+                    {'autostart': True},
+                    {'node_names': ['slam']}]
+    )
 
     lidar_transform = Node(
         package='tf2_ros',
@@ -58,7 +58,7 @@ def generate_launch_description():
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
         name='slam',
-        parameters=[slam_params_file, {'use_sim_time': 'false'}],
+        parameters=[slam_params_file, {'use_sim_time': True}],
     )
 
 
@@ -68,5 +68,6 @@ def generate_launch_description():
         # talker
         # map_server,
         lidar_transform,
-        slam
+        slam,
+        start_lifecycle_manager
     ])
