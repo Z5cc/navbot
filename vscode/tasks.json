@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "colcon",
+			"type": "shell",
+			"command": "colcon build --symlink-install  --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo",
+		},
+		{
+			"label": "kill_sim",
+			"type": "shell",
+			"command": "pkill -f 'rviz2|gz' || true",
+		},
+
+	]
+}
