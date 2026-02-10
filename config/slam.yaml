@@ -14,7 +14,7 @@ slam:
     map_frame: map
     base_frame: X1/base_link
     scan_topic: /scan
-    # mode: mapping # It will be set in launch file
+    mode: mapping # It will be set in launch file
     debug_logging: false
     throttle_scans: 1
     transform_publish_period: 0.02 # If 0 never publishes odometry
