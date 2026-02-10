@@ -40,7 +40,7 @@ code .
 
 Copy the launch config files from *vscode_backup* to *.vscode*:
 ```bash
-cp src/navbot/vscode_backup/* .vscode 
+cp src/navbot/vscode/* .vscode 
 ```
 
 Under 'Rund and Debug' select 'launch' as the launch config and press the green arrow 'Start Debugging'.
